@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+
+    <script src="bower_components/platform/platform.js"></script>
+
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/font-roboto/roboto.html">
+    <link rel="import" href="bower_components/core-list/core-list.html">
+    <link rel="import" href="bower_components/core-icons/core-icons.html">
+    <link rel="import" href="bower_components/core-icons/image-icons.html">
+    <link rel="import" href="bower_components/core-icons/social-icons.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+
+    <!-- Our custom post list -->
+    <link rel="import" href="elements/lists/post-list.html">
+    <style>
+      html, body {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      #logo {
+        height: 32px;
+      }
+
+      #logo img {
+        margin-top: 4px;
+        height: 100%;
+      }
+
+      #fab {
+        position: fixed;
+        bottom: 80px;
+        right: 24px;
+        z-index: 1;
+        background: #2B5A83;
+        color: #FFFFFF;
+      }
+
+      core-header-panel,
+      core-item {
+        height: 100%;
+      }
+
+      .action-bar {
+        box-sizing: border-box;
+        padding: 4px;
+        background: #2B5A83;
+        color: #FFFFFF;
+        border-bottom: 1px solid #101010;
+      }
+
+      .tab-bar {
+        padding: 4px;
+        background: #25292C;
+        color: #A5A9AC;
+      }
+      .tab-bar::shadow #selectionBar {
+        background-color: #2B5A83;
+      }
+      .tab-bar paper-tab::shadow #ink {
+        color: #2B5A83;
+      }
+      .tab-bar paper-tab core-icon {
+        width: 32px;
+        height: 32px;
+      }
+      .tab-bar paper-tab[active] core-icon {
+        color: #FFFFFF;
+      }
+
+      paper-fab {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      paper-icon-button {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #FFFFFF;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <paper-fab id="fab" icon="image:camera-alt"></paper-fab>
+
+    <div layout vertical fit>
+
+      <div class="toolbar action-bar" layout horizontal center>
+        <paper-icon-button icon="menu"></paper-icon-button>
+        <span id="logo"><img src="images/logo.svg" alt="Instagram"></span>
+        <div flex></div>
+
+        <paper-icon-button icon="inbox"></paper-icon-button>
+        <paper-icon-button icon="refresh"></paper-icon-button>
+      </div>
+
+      <post-list flex></post-list>
+
+      <paper-tabs selected="0" class="tab-bar">
+        <paper-tab>
+          <core-icon icon="home"></core-icon>
+        </paper-tab>
+        <paper-tab>
+          <core-icon icon="explore"></core-icon>
+        </paper-tab>
+        <paper-tab>
+          <core-icon icon="favorite"></core-icon>
+        </paper-tab>
+        <paper-tab>
+          <core-icon icon="social:person"></core-icon>
+        </paper-tab>
+      </paper-tabs>
+
+    </div>
+
+  </body>
+</html>

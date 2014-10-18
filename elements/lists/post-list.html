@@ -1,0 +1,109 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="../../bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="../../bower_components/core-icons/device-icons.html">
+
+<polymer-element name="post-list" layout vertical>
+<template>
+<style>
+  .card-post {
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #CCCCCC;
+  }
+
+  .card-post-header {
+    box-sizing: border-box;
+    padding: 4px 8px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.88)
+  }
+
+  .card-post-author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+  }
+
+  .card-post-author-username {
+    color: #2B5A83;
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 8px;
+  }
+
+  .card-post-datetime {
+    color: #A5A9AD;
+    font-size: 14px;
+  }
+  .card-post-datetime core-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+  }
+
+  .card-post-image {
+    width: 100%;
+  }
+
+</style>
+<core-list id="list" data="{{data}}" selectionEnabled="false" height="440">
+  <template>
+    <div class="card card-post">
+      <div class="card-post-header" layout horizontal center>
+        <img class="card-post-author-avatar" src="{{model.author.avatar}}" />
+        <span class="card-post-author-username" flex>{{model.author.username}}</span>
+        <div class="card-post-datetime" layout horizontal center>
+          <core-icon icon="device:access-time"></core-icon>
+          <span>{{model.created_at}}</span>
+        </div>
+      </div>
+      <div content>
+        <img class="card-post-image" src="{{model.image}}">
+      </div>
+    </div>
+  </template>
+</core-list>
+</template>
+<script>
+  (function() {
+    // Our sample data
+    var data = [
+      {
+        author: {
+          avatar: 'http://photos-c.ak.instagram.com/hphotos-ak-xpf1/10475198_464347863701962_1187171404_a.jpg',
+          username: 'biancamagtoto'
+        },
+        image: 'http://photos-g.ak.instagram.com/hphotos-ak-xaf1/10725141_228945083942774_903567815_n.jpg',
+        created_at: '3h'
+      },
+      {
+        author: {
+          avatar: 'http://images.ak.instagram.com/profiles/profile_263926265_75sq_1395688637.jpg',
+          username: 'noelmvenegas'
+        },
+        image: 'http://photos-b.ak.instagram.com/hphotos-ak-xaf1/10724937_285493618325425_796421598_n.jpg',
+        created_at: '6h'
+      },
+      {
+        author: {
+          avatar: 'http://images.ak.instagram.com/profiles/profile_37669885_75sq_1397900136.jpg',
+          username: 'totialkianne'
+        },
+        image: 'http://photos-h.ak.instagram.com/hphotos-ak-xfa1/10735058_371693519663271_532312647_n.jpg',
+        created_at: '6h'
+      }
+    ];
+
+    Polymer('post-list', {
+      ready: function() {
+        this.initArray();
+      },
+      initArray: function() {
+        this.data = data;
+      }
+    });
+  })();
+</script>
+</polymer-element>
