@@ -1,0 +1,23 @@
+{
+  "name": "gdgdevfest2014-codelab",
+  "version": "0.0.0",
+  "authors": [
+    "Jaune Sarmiento <hawnecarlo@gmail.com>"
+  ],
+  "description": "Google Developer Groups Philippines 2014 Code Lab for Polymer",
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#~0.4.2"
+  }
+}
