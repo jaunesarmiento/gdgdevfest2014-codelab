@@ -1,7 +1,7 @@
 Polymer Code Lab
 ==
 
-# Running the project
+## Running the project
 
 - Go to the root directory of this project.
 ```bash
@@ -20,6 +20,6 @@ $ bower install
 $ python -m SimpleHTTPServer
 ```
 
-# License
+## License
 
 This project is licensed under the [MIT License](http://opensource.org/licenses/MIT). Copyright &copy; Jaune Sarmiento 2014
